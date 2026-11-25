@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FLUX® — Motion Design Studio / 动态设计</title>
+<meta name="description" content="FLUX® is an independent motion design studio in Shanghai. Kinetic identities, reactive interfaces and films that leave a mark.">
+<meta name="theme-color" content="#0C0C0B">
+<meta property="og:title" content="FLUX® — Motion, with a pulse.">
+<meta property="og:description" content="An independent motion design studio in Shanghai. We make things move.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230C0C0B'/%3E%3Cpath d='M32 9v46M9 32h46M16 16l32 32M48 16L16 48' stroke='%23D8FF3E' stroke-width='6' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preload" href="assets/fonts/Syne-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/JetBrainsMono-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/InstrumentSerif-400-italic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body class="is-loading">
+
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- loader -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader-inner">
+    <div class="loader-top mono"><span>FLUX® STUDIO</span><span>SHANGHAI — CN</span></div>
+    <div class="loader-mid">
+      <svg class="loader-ast" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1v22M1 12h22M4 4l16 16M20 4L4 20"/></svg>
+    </div>
+    <div class="loader-bottom">
+      <div class="loader-status mono"><i class="dot"></i><span id="loadWord">CALIBRATING MOTION</span></div>
+      <div class="loader-count"><span id="loadNum">000</span><em>%</em></div>
+    </div>
+    <div class="loader-bar"><i id="loadBar"></i></div>
+  </div>
+</div>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor" id="cursorDot" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"><span id="cursorLabel"></span></div>
+<div class="progress-top"><i id="scrollBar"></i></div>
+
+<div class="topbar">
+  <a class="brand" href="#top" aria-label="FLUX — back to top">FLUX<sup>®</sup></a>
+  <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menu">
+    <span class="menu-btn__label">MENU</span>
+    <span class="menu-btn__icon"><i></i><i></i></span>
+  </button>
+</div>
+
+<!-- menu overlay -->
+<div class="menu" id="menu" aria-hidden="true">
+  <div class="menu-inner">
+    <div class="menu-top mono"><span>INDEX — 目录</span><span>SHANGHAI, CN</span></div>
+    <nav class="menu-nav" aria-label="Main">
+      <a href="#work"><em>01</em><span>WORK</span><small>作品</small></a>
+      <a href="#studio"><em>02</em><span>STUDIO</span><small>工作室</small></a>
+      <a href="#play"><em>03</em><span>PLAYGROUND</span><small>游乐场</small></a>
+      <a href="#contact"><em>04</em><span>CONTACT</span><small>联系</small></a>
+    </nav>
+    <div class="menu-foot">
+      <a class="menu-mail" href="mailto:hello@flux.studio">HELLO@FLUX.STUDIO</a>
+      <div class="menu-socials mono">
+        <a href="https://instagram.com" target="_blank" rel="noopener">INSTAGRAM</a>
+        <a href="https://behance.net" target="_blank" rel="noopener">BEHANCE</a>
+        <a href="https://vimeo.com" target="_blank" rel="noopener">VIMEO</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
+    <div class="hero-veil" aria-hidden="true"></div>
+
+    <div class="hero-inner">
+      <div class="hero-eyebrow mono">
+        <span class="dot"></span><span>INDEPENDENT MOTION STUDIO</span>
+        <span class="sep">/</span><span>SHANGHAI</span>
+        <span class="hero-clock"><span id="clock">00:00:00</span> CST</span>
+      </div>
+
+      <h1 class="hero-title">
+        <span class="hero-word" aria-hidden="true">
+          <span class="hero-mask"><span class="hero-ch" style="--i:0">F</span></span>
+          <span class="hero-mask"><span class="hero-ch" style="--i:1">L</span></span>
+          <span class="hero-mask"><span class="hero-ch" style="--i:2">U</span></span>
+          <span class="hero-mask"><span class="hero-ch" style="--i:3">X</span></span>
+        </span>
+        <span class="hero-reg" aria-hidden="true">®</span>
+        <span class="sr-only">FLUX</span>
+      </h1>
+
+      <div class="hero-sub">
+        <p class="hero-serif">motion,<br><em>with a pulse.</em></p>
+        <div class="hero-sub-right">
+          <p class="hero-cn" lang="zh">让一切，保持流动。</p>
+          <p class="hero-desc">We design kinetic identities, reactive interfaces and films that leave a mark — one frame at a time.</p>
+          <div class="hero-status mono"><i class="dot"></i>OPEN FOR Q3 2026</div>
+        </div>
+      </div>
+
+      <div class="hero-foot">
+        <span class="hero-foot-label mono">SCROLL TO EXPLORE <span class="arr">↓</span></span>
+        <a class="badge" href="#studio" data-cursor="SCROLL" aria-label="Scroll to studio">
+          <svg class="badge-spin" viewBox="0 0 200 200" aria-hidden="true">
+            <defs><path id="badgePath" d="M100,100 m-76,0 a76,76 0 1,1 152,0 a76,76 0 1,1 -152,0"/></defs>
+            <text><textPath href="#badgePath">SCROLL TO EXPLORE — SCROLL TO EXPLORE — </textPath></text>
+          </svg>
+          <span class="badge-arrow">↓</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-side mono" aria-hidden="true">MOTION — 动态 — ART DIRECTION —</div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker ticker--hero" aria-hidden="true">
+    <div class="ticker-track">
+      <div class="ticker-group">
+        <span>OPEN FOR COMMISSIONS</span><b>✱</b><span>MOTION DESIGN</span><b>✱</b><span>ART DIRECTION</span><b>✱</b><span>WEBGL &amp; INTERACTION</span><b>✱</b><span>TYPE IN MOTION</span><b>✱</b><span>SHANGHAI → EVERYWHERE</span><b>✱</b>
+      </div>
+      <div class="ticker-group">
+        <span>OPEN FOR COMMISSIONS</span><b>✱</b><span>MOTION DESIGN</span><b>✱</b><span>ART DIRECTION</span><b>✱</b><span>WEBGL &amp; INTERACTION</span><b>✱</b><span>TYPE IN MOTION</span><b>✱</b><span>SHANGHAI → EVERYWHERE</span><b>✱</b>
+      </div>
+    </div>
+  </div>
+
+  <!-- MANIFESTO -->
+  <section class="manifesto" id="studio">
+    <div class="wrap manifesto-grid">
+      <aside class="manifesto-aside">
+        <div class="label mono"><span class="label-idx">01</span><span>POINT OF VIEW</span></div>
+        <h2 class="h-display split" data-reveal>
+          <span class="line"><span>静止，</span></span>
+          <span class="line"><span>是一种 <em>bug</em>。</span></span>
+        </h2>
+        <p class="manifesto-tag mono">STILLNESS IS A BUG<br>MOTION IS THE MESSAGE</p>
+        <div class="manifesto-note">
+          <svg class="ast ast--spin" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1v22M1 12h22M4 4l16 16M20 4L4 20"/></svg>
+          <span class="mono">WE DON'T DECORATE.<br>WE CHOREOGRAPH.</span>
+        </div>
+      </aside>
+
+      <div class="manifesto-body">
+        <p class="illuminate illuminate--zh" data-illuminate data-split="chars" lang="zh">我们为品牌、产品与空间设计有生命的动。它不喧哗，却无法被忽略。每一条缓动曲线、每一次呼吸、每一帧停顿，都是叙事的一部分。</p>
+        <p class="illuminate illuminate--en" data-illuminate data-split="words">We craft identities that breathe, interfaces that answer back, and films that leave a mark. Not decoration — grammar. Because design isn't just seen. It's <em>felt</em>.</p>
+
+        <ol class="principles">
+          <li><span class="mono">P.01</span><strong>节奏先于打磨</strong><span class="mono">PACING OVER POLISH</span></li>
+          <li><span class="mono">P.02</span><strong>感受先于形式</strong><span class="mono">FEELING OVER FORM</span></li>
+          <li><span class="mono">P.03</span><strong>每一次运动都有理由</strong><span class="mono">EVERY MOVE HAS A REASON</span></li>
+        </ol>
+
+        <div class="manifesto-stamp" aria-hidden="true">
+          <svg class="stamp-spin" viewBox="0 0 200 200">
+            <defs><path id="stampPath" d="M100,100 m-72,0 a72,72 0 1,1 144,0 a72,72 0 1,1 -144,0"/></defs>
+            <text><textPath href="#stampPath">EST. 2017 — SHANGHAI — MOTION STUDIO — </textPath></text>
+          </svg>
+          <svg class="ast" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1v22M1 12h22M4 4l16 16M20 4L4 20"/></svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section class="work" id="work">
+    <div class="work-pin">
+      <div class="work-head">
+        <div class="label mono light"><span class="label-idx">02</span><span>SELECTED WORK</span></div>
+        <div class="work-head-row">
+          <h2 class="h-display light" data-reveal>
+            <span class="line"><span>THINGS</span></span>
+            <span class="line"><span>THAT <em>move</em></span></span>
+          </h2>
+          <p class="work-intro">A few favourite collaborations, experiments and happy accidents — four ways to make a screen feel alive.</p>
+        </div>
+      </div>
+
+      <div class="work-viewport">
+        <div class="work-track" id="workTrack">
+
+          <article class="card card--ink">
+            <div class="card-top mono"><span>01 / 04</span><span>AUDIO — REACTIVE</span><span>2025</span></div>
+            <div class="card-visual"><canvas data-study="wave" aria-hidden="true"></canvas></div>
+            <div class="card-info">
+              <div class="card-title-row">
+                <h3>NOISE FLOOR<sup>®</sup></h3>
+                <span class="card-arrow">↗</span>
+              </div>
+              <div class="card-meta">
+                <span class="mono">SOUND INSTALLATION / 声音可视化</span>
+                <p>A room that listens back — live audio turned into a field of light.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="card card--lilac">
+            <div class="card-top mono"><span>02 / 04</span><span>IDENTITY — SYSTEM</span><span>2025</span></div>
+            <div class="card-visual"><canvas data-study="moire" aria-hidden="true"></canvas></div>
+            <div class="card-info">
+              <div class="card-title-row">
+                <h3>SOFT MACHINE<sup>®</sup></h3>
+                <span class="card-arrow">↗</span>
+              </div>
+              <div class="card-meta">
+                <span class="mono">BRAND MOTION / 品牌动态系统</span>
+                <p>An identity that refuses to repeat itself. Built from interference.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="card card--flare">
+            <div class="card-top mono"><span>03 / 04</span><span>FILM — TITLES</span><span>2024</span></div>
+            <div class="card-visual"><canvas data-study="solaris" aria-hidden="true"></canvas></div>
+            <div class="card-info">
+              <div class="card-title-row">
+                <h3>SOLARIS<sup>®</sup></h3>
+                <span class="card-arrow">↗</span>
+              </div>
+              <div class="card-meta">
+                <span class="mono">TITLE SEQUENCE / 片头影像</span>
+                <p>A sun that sets in type. Opening titles for a fictional space opera.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="card card--bone">
+            <div class="card-top mono"><span>04 / 04</span><span>TYPE — GENERATIVE</span><span>2024</span></div>
+            <div class="card-visual"><canvas data-study="flow" aria-hidden="true"></canvas></div>
+            <div class="card-info">
+              <div class="card-title-row">
+                <h3>PAPER TIDE<sup>®</sup></h3>
+                <span class="card-arrow">↗</span>
+              </div>
+              <div class="card-meta">
+                <span class="mono">GENERATIVE TYPE / 字体实验</span>
+                <p>Ink, but make it liquid. 10,000 particles, one restless tide.</p>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <div class="work-foot">
+        <div class="work-progress"><i id="workProgress"></i></div>
+        <span class="mono" id="workCount">01 / 04</span>
+        <a class="work-more mono" href="#contact">FULL CASE STUDIES ON REQUEST ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LAB -->
+  <section class="lab" id="play">
+    <div class="lab-head wrap">
+      <div class="label mono"><span class="label-idx">03</span><span>PLAYGROUND</span></div>
+      <div class="lab-head-row">
+        <h2 class="h-display" data-reveal>
+          <span class="line"><span>BREAK</span></span>
+          <span class="line"><span>THE <em>word</em>.</span></span>
+        </h2>
+        <div class="lab-instructions">
+          <p>Your cursor is a force field. Go on, disturb it.</p>
+          <p class="mono">移动光标 · 点击炸开</p>
+          <button class="pill" id="scatterBtn" data-cursor="SCATTER">SCATTER IT <span>↗</span></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="lab-stage" id="labStage" data-cursor="PLAY">
+      <div class="lab-field" id="labField" aria-hidden="true"></div>
+      <div class="lab-word" id="labWord" aria-label="MOVE">
+        <span class="lab-letter">M</span><span class="lab-letter">O</span><span class="lab-letter">V</span><span class="lab-letter">E</span><span class="lab-dot">.</span>
+      </div>
+      <div class="lab-cross lab-cross--tl" aria-hidden="true">+</div>
+      <div class="lab-cross lab-cross--br" aria-hidden="true">+</div>
+      <div class="lab-hud mono">
+        <span>FORCE FIELD / ON</span>
+        <span class="lab-hud__mid">SPRING 0.08 — DAMP 0.86</span>
+        <span>FPS <b id="fps">60</b></span>
+      </div>
+    </div>
+
+    <div class="lab-foot wrap mono">
+      <span>PLAYGROUND N°03 — CURSOR PHYSICS</span>
+      <span>NO LETTERS WERE HARMED</span>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="wrap">
+      <div class="label mono"><span class="label-idx">04</span><span>CAPABILITIES</span></div>
+      <div class="services-head">
+        <h2 class="h-display" data-reveal>
+          <span class="line"><span>WHAT</span></span>
+          <span class="line"><span>WE <em>do</em></span></span>
+        </h2>
+        <p class="services-intro">From first sketch to final frame, we choreograph every pixel. Hover to feel it.</p>
+      </div>
+
+      <ul class="service-list" id="serviceList">
+        <li class="service" data-label="IDENTITY" style="--c:#D8FF3E">
+          <span class="service-num mono">01</span>
+          <h3>KINETIC IDENTITY</h3>
+          <span class="service-cn">动态品牌系统</span>
+          <span class="service-desc">Logos that move. Systems that scale.</span>
+          <span class="service-arrow">↗</span>
+        </li>
+        <li class="service" data-label="FILM" style="--c:#2525E8">
+          <span class="service-num mono">02</span>
+          <h3>MOTION FILM</h3>
+          <span class="service-cn">动态影像</span>
+          <span class="service-desc">Launch films, title sequences, loops.</span>
+          <span class="service-arrow">↗</span>
+        </li>
+        <li class="service" data-label="WEBGL" style="--c:#FF4A17">
+          <span class="service-num mono">03</span>
+          <h3>WEBGL &amp; INTERACTION</h3>
+          <span class="service-cn">交互体验</span>
+          <span class="service-desc">Sites that react. Worlds that respond.</span>
+          <span class="service-arrow">↗</span>
+        </li>
+        <li class="service" data-label="TYPE" style="--c:#C9B9FF">
+          <span class="service-num mono">04</span>
+          <h3>TYPE IN MOTION</h3>
+          <span class="service-cn">字体实验</span>
+          <span class="service-desc">Variable fonts. Kinetic typography.</span>
+          <span class="service-arrow">↗</span>
+        </li>
+      </ul>
+
+      <div class="clients">
+        <span class="mono">SELECTED CLIENTS —</span>
+        <div class="clients-marquee" aria-hidden="true">
+          <div class="clients-track">
+            <span>NOISE LAB</span><b>✱</b><span>KINETIC PRESS</span><b>✱</b><span>AETHER</span><b>✱</b><span>MONOFORM</span><b>✱</b><span>TIDE</span><b>✱</b><span>SOLARIS</span><b>✱</b>
+            <span>NOISE LAB</span><b>✱</b><span>KINETIC PRESS</span><b>✱</b><span>AETHER</span><b>✱</b><span>MONOFORM</span><b>✱</b><span>TIDE</span><b>✱</b><span>SOLARIS</span><b>✱</b>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="preview" id="servicePreview" aria-hidden="true">
+      <div class="preview-disc" id="previewDisc"><span id="previewLabel">IDENTITY</span></div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats">
+    <div class="stats-head wrap">
+      <div class="label mono"><span class="label-idx">05</span><span>BY THE NUMBERS</span></div>
+      <p class="stats-line">Numbers move too<span class="stats-line__dot">.</span></p>
+    </div>
+    <div class="stats-grid wrap">
+      <div class="stat"><span class="stat-num" data-count="48">48</span><span class="mono stat-label">PROJECTS SHIPPED / 项目</span></div>
+      <div class="stat"><span class="stat-num" data-count="9" data-pad="2">09</span><span class="mono stat-label">YEARS IN MOTION / 年</span></div>
+      <div class="stat"><span class="stat-num" data-count="12">12</span><span class="mono stat-label">AWARDS &amp; MENTIONS / 奖项</span></div>
+      <div class="stat"><span class="stat-num">∞</span><span class="mono stat-label">FRAMES TO GO / 帧</span></div>
+    </div>
+    <div class="stats-runner" aria-hidden="true">
+      <div class="runner-track mono">
+        <span>FRAME BY FRAME — 一帧一帧 — 24 FPS — 60 FPS — NO SHORTCUTS — ONLY RHYTHM —</span>
+        <span>FRAME BY FRAME — 一帧一帧 — 24 FPS — 60 FPS — NO SHORTCUTS — ONLY RHYTHM —</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="contact">
+    <div class="ticker ticker--footer" aria-hidden="true">
+      <div class="ticker-track ticker-track--rev">
+        <div class="ticker-group">
+          <span>LET'S MAKE IT MOVE</span><b>✱</b><span>有想法？聊聊</span><b>✱</b><span>OPEN FOR COMMISSIONS 2026</span><b>✱</b><span>LET'S MAKE IT MOVE</span><b>✱</b><span>有想法？聊聊</span><b>✱</b>
+        </div>
+        <div class="ticker-group">
+          <span>LET'S MAKE IT MOVE</span><b>✱</b><span>有想法？聊聊</span><b>✱</b><span>OPEN FOR COMMISSIONS 2026</span><b>✱</b><span>LET'S MAKE IT MOVE</span><b>✱</b><span>有想法？聊聊</span><b>✱</b>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-main wrap">
+      <div class="label mono light"><span class="label-idx">06</span><span>CONTACT</span></div>
+      <h2 class="footer-title">
+        <span class="ft-line">LET'S MAKE</span>
+        <span class="ft-line">IT <em>move</em>.<svg class="ast ft-ast" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1v22M1 12h22M4 4l16 16M20 4L4 20"/></svg></span>
+      </h2>
+
+      <div class="footer-row">
+        <div class="footer-left">
+          <p class="footer-cn">有想法？聊聊。</p>
+          <a class="mail" href="mailto:hello@flux.studio">HELLO@FLUX.STUDIO</a>
+          <div class="footer-actions">
+            <button class="pill pill--lime" id="copyMail" data-cursor="COPY">COPY EMAIL</button>
+            <a class="pill pill--ghost" href="mailto:hello@flux.studio" data-cursor="SAY HI">START A PROJECT ↗</a>
+          </div>
+        </div>
+        <div class="footer-right">
+          <div class="footer-col"><span class="mono">STUDIO</span><p>Shanghai, CN<br>31.2304° N / 121.4737° E</p></div>
+          <div class="footer-col"><span class="mono">SOCIAL</span><p><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a><br><a href="https://behance.net" target="_blank" rel="noopener">Behance</a><br><a href="https://vimeo.com" target="_blank" rel="noopener">Vimeo</a></p></div>
+          <div class="footer-col"><span class="mono">LOCAL TIME</span><p id="clock2">00:00:00</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom wrap mono">
+      <span>© 2026 FLUX® STUDIO — ALL MOTION RESERVED</span>
+      <span class="footer-bottom__mid">MADE WITH ♥ AND 60 FPS</span>
+      <button class="totop" id="toTop" data-cursor="TOP">BACK TO TOP ↑</button>
+    </div>
+  </footer>
+
+</main>
+<script src="app.js"></script>
+</body>
+</html>
