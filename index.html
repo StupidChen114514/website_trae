@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KINESIS® — Nothing stands still</title>
+  <meta name="description" content="KINESIS is an independent motion design practice — motion systems, WebGL experiences and interface choreography for brands, products and screens. Designed and built in the browser.">
+  <meta name="theme-color" content="#08080A">
+  <meta property="og:title" content="KINESIS® — Nothing stands still">
+  <meta property="og:description" content="Motion systems, WebGL and interface choreography. Designed and built in the browser.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <noscript>
+    <style>
+      [data-reveal] { opacity: 1 !important; transform: none !important; }
+      .hero__title .line__i,
+      .contact__title .line__i { transform: none !important; }
+      .lede .w { opacity: 1 !important; }
+    </style>
+  </noscript>
+</head>
+<body>
+
+  <a class="skip" href="#work">Skip to selected work</a>
+
+  <!-- global overlays -->
+  <div class="grain" aria-hidden="true"></div>
+  <div class="progress" aria-hidden="true"><span class="progress__bar"></span></div>
+
+  <div class="cursor" aria-hidden="true">
+    <span class="cursor__dot"></span>
+    <span class="cursor__ring"><span class="cursor__label"></span></span>
+  </div>
+
+  <!-- header -->
+  <header class="head">
+    <a class="brand" href="#top" aria-label="Kinesis home">
+      <span class="brand__mark" aria-hidden="true">K</span>
+      <span class="brand__name">KINESIS<sup>®</sup></span>
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      <a href="#work" class="nav__link"><span>Work</span></a>
+      <a href="#craft" class="nav__link"><span>Craft</span></a>
+      <a href="#studio" class="nav__link"><span>Studio</span></a>
+      <a href="#contact" class="nav__link"><span>Contact</span></a>
+    </nav>
+
+    <div class="head__right">
+      <span class="head__status"><i class="dot" aria-hidden="true"></i>Open for 2026</span>
+      <a href="#contact" class="pill" data-magnetic data-cursor="Say hi">
+        <span>Let&rsquo;s talk</span>
+        <i aria-hidden="true">↗</i>
+      </a>
+      <button class="burger" type="button" aria-label="Open menu" aria-controls="menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- fullscreen menu -->
+  <div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Menu" aria-hidden="true">
+    <div class="menu__top">
+      <span class="menu__label">Index — 2026</span>
+      <button class="menu__close" type="button" aria-label="Close menu">Close <i aria-hidden="true"></i></button>
+    </div>
+    <nav class="menu__nav" aria-label="Menu">
+      <a href="#work" class="menu__link"><span class="menu__num">01</span><span class="menu__word">Work</span></a>
+      <a href="#craft" class="menu__link"><span class="menu__num">02</span><span class="menu__word">Craft</span></a>
+      <a href="#studio" class="menu__link"><span class="menu__num">03</span><span class="menu__word">Studio</span></a>
+      <a href="#contact" class="menu__link"><span class="menu__num">04</span><span class="menu__word">Contact</span></a>
+    </nav>
+    <div class="menu__foot">
+      <a href="mailto:hello@kinesis.studio">hello@kinesis.studio</a>
+      <p>Shanghai <span class="sep">/</span> <span data-clock>--:--:--</span> CST</p>
+    </div>
+  </div>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" aria-label="Introduction">
+      <canvas class="hero__gl" id="heroGl" aria-hidden="true"></canvas>
+      <div class="hero__veil" aria-hidden="true"></div>
+
+      <div class="hero__rail" aria-hidden="true">
+        <span>Portfolio — Vol. 01</span>
+        <span>31.2304° N / 121.4737° E</span>
+      </div>
+
+      <div class="hero__inner">
+        <div class="hero__main">
+          <p class="kicker" data-hero="1">
+            <i class="dot" aria-hidden="true"></i>
+            Motion designer &amp; creative technologist
+          </p>
+
+          <h1 class="hero__title" aria-label="Nothing stands still">
+            <span class="line"><span class="line__i" data-hero="2">Nothing</span></span>
+            <span class="line line--indent"><span class="line__i" data-hero="3">stands</span></span>
+            <span class="line line--last">
+              <span class="line__i" data-hero="4"><em>still</em><b class="line__dot" aria-hidden="true">.</b><span class="hero__reg" aria-hidden="true">®</span></span>
+            </span>
+          </h1>
+
+          <p class="hero__sub" data-hero="5">
+            I build motion systems for brands, interfaces and screens — where timing carries
+            meaning and every frame earns its place.<br>
+            <span class="zh" lang="zh-CN">以时间作为材料，让界面、品牌与屏幕拥有自己的呼吸。</span>
+          </p>
+
+          <div class="hero__actions" data-hero="6">
+            <a class="btn" href="#work" data-magnetic data-cursor="Scroll">
+              <span>See the work</span><i aria-hidden="true">↘</i>
+            </a>
+            <a class="btn btn--ghost" href="#contact" data-magnetic data-cursor="Talk">
+              <span>Start a project</span><i aria-hidden="true">↗</i>
+            </a>
+          </div>
+        </div>
+
+        <aside class="hero__side">
+          <a class="seal" href="#statement" aria-label="Scroll to explore" data-magnetic>
+            <svg viewBox="0 0 140 140" aria-hidden="true">
+              <defs>
+                <path id="sealPath" d="M70,70 m-52,0 a52,52 0 1,1 104,0 a52,52 0 1,1 -104,0"></path>
+              </defs>
+              <text>
+                <textPath href="#sealPath" startOffset="0">Scroll to explore · Motion is a language · </textPath>
+              </text>
+            </svg>
+            <span class="seal__core" aria-hidden="true">✳</span>
+          </a>
+          <p class="hero__coords">
+            Studio Kinesis<br>
+            Shanghai — remote<br>
+            <span data-clock>--:--:--</span> CST
+          </p>
+        </aside>
+      </div>
+
+      <div class="hero__foot" data-hero="7">
+        <p class="hero__note">Independent practice<br>Est. 2018</p>
+        <a class="scroll-cue" href="#statement" aria-label="Scroll down">
+          <span class="scroll-cue__line" aria-hidden="true"><i></i></span>
+          <span>Scroll</span>
+        </a>
+        <dl class="hero__stats">
+          <div><dt>Projects</dt><dd>126</dd></div>
+          <div><dt>Awards</dt><dd>14</dd></div>
+          <div><dt>Years</dt><dd>08</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ============ TICKER ============ -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker__row">
+        <div class="ticker__group">
+          <span>Motion systems</span><b>✳</b><span>WebGL &amp; shaders</span><b>✳</b><span>Interface choreography</span><b>✳</b><span>3D &amp; CGI</span><b>✳</b><span>Creative direction</span><b>✳</b>
+        </div>
+        <div class="ticker__group">
+          <span>Motion systems</span><b>✳</b><span>WebGL &amp; shaders</span><b>✳</b><span>Interface choreography</span><b>✳</b><span>3D &amp; CGI</span><b>✳</b><span>Creative direction</span><b>✳</b>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ STATEMENT ============ -->
+    <section class="statement" id="statement" aria-labelledby="statementTitle">
+      <div class="wrap">
+        <header class="sec-head" data-reveal>
+          <span class="sec-num">(01)</span>
+          <h2 class="sec-title" id="statementTitle">Point of view</h2>
+          <span class="sec-meta">Shanghai / Everywhere</span>
+        </header>
+
+        <div class="statement__body">
+          <p class="lede" data-words>
+            Motion is not decoration. It is the grammar of an interface — the pause before a
+            decision, the weight of a tap, the colour that tells you something has changed.
+            I design those moments, then I build them in the browser.
+          </p>
+
+          <aside class="statement__aside" data-reveal style="--d:2">
+            <p class="statement__zh" lang="zh-CN">
+              我把动效当作信息的时间结构：先决定节奏，再设计画面。
+              作品横跨品牌动态系统、WebGL 体验与产品界面动效，
+              从第一帧分镜到最后一行动画代码，全部亲手完成。
+            </p>
+            <dl class="facts">
+              <div class="fact"><dt>Base</dt><dd>Shanghai, CN</dd></div>
+              <div class="fact"><dt>Scope</dt><dd>Concept → Ship</dd></div>
+              <div class="fact"><dt>Awards</dt><dd>14 &amp; counting</dd></div>
+            </dl>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WORK ============ -->
+    <section class="work" id="work" aria-labelledby="workTitle">
+      <div class="wrap">
+        <header class="sec-head" data-reveal>
+          <span class="sec-num">(02)</span>
+          <h2 class="sec-title" id="workTitle">Selected work</h2>
+          <span class="sec-meta">2021 — 2026</span>
+        </header>
+
+        <p class="work__intro" data-reveal>
+          Four systems, one rule: the motion has to mean something.
+          <span lang="zh-CN">每一个项目都从一条规则开始，而不是从一个版面开始。</span>
+        </p>
+      </div>
+
+      <div class="wrap work__grid">
+
+        <article class="card" data-card data-reveal style="--accent:#1B23FF">
+          <a class="card__link" href="#contact" data-cursor="Request" aria-label="Prism/OS — generative identity, 2026">
+            <div class="card__media">
+              <canvas class="card__art" data-art="chroma" aria-hidden="true"></canvas>
+              <span class="card__idx" aria-hidden="true">01</span>
+              <span class="card__glow" aria-hidden="true"></span>
+              <span class="card__cta" aria-hidden="true">Case<br>on request <i>↗</i></span>
+            </div>
+            <div class="card__body">
+              <div class="card__top">
+                <h3 class="card__title">Prism<em>/</em>OS</h3>
+                <span class="card__year">2026</span>
+              </div>
+              <p class="card__desc">
+                A generative identity for a music-technology label. Every keystroke grows a
+                new mark — the logo has never repeated itself.
+              </p>
+              <ul class="card__tags">
+                <li>WebGL</li><li>Identity</li><li>Sound</li>
+              </ul>
+            </div>
+          </a>
+        </article>
+
+        <article class="card card--narrow card--drop" data-card data-reveal style="--accent:#D8FF3E">
+          <a class="card__link" href="#contact" data-cursor="Request" aria-label="Velocity — kinetic typography, 2025">
+            <div class="card__media">
+              <canvas class="card__art" data-art="velocity" aria-hidden="true"></canvas>
+              <span class="card__idx" aria-hidden="true">02</span>
+              <span class="card__glow" aria-hidden="true"></span>
+              <span class="card__cta" aria-hidden="true">Case<br>on request <i>↗</i></span>
+            </div>
+            <div class="card__body">
+              <div class="card__top">
+                <h3 class="card__title">Velocity</h3>
+                <span class="card__year">2025</span>
+              </div>
+              <p class="card__desc">
+                Kinetic typography for a three-day festival. Forty thousand people, one
+                shared heartbeat, zero static posters.
+              </p>
+              <ul class="card__tags">
+                <li>Kinetic type</li><li>Art direction</li>
+              </ul>
+            </div>
+          </a>
+        </article>
+
+        <article class="card card--narrow" data-card data-reveal style="--accent:#FF4B2B">
+          <a class="card__link" href="#contact" data-cursor="Request" aria-label="Soft Machine — product launch, 2025">
+            <div class="card__media">
+              <canvas class="card__art" data-art="machine" aria-hidden="true"></canvas>
+              <span class="card__idx" aria-hidden="true">03</span>
+              <span class="card__glow" aria-hidden="true"></span>
+              <span class="card__cta" aria-hidden="true">Case<br>on request <i>↗</i></span>
+            </div>
+            <div class="card__body">
+              <div class="card__top">
+                <h3 class="card__title">Soft Machine</h3>
+                <span class="card__year">2025</span>
+              </div>
+              <p class="card__desc">
+                Launch film and interface motion for a folding device — hinges, light and
+                physics animating as one object.
+              </p>
+              <ul class="card__tags">
+                <li>3D / CGI</li><li>Product</li><li>Film</li>
+              </ul>
+            </div>
+          </a>
+        </article>
+
+        <article class="card card--drop" data-card data-reveal style="--accent:#7C5CFF">
+          <a class="card__link" href="#contact" data-cursor="Request" aria-label="Orbital — stage visuals, 2024">
+            <div class="card__media">
+              <canvas class="card__art" data-art="orbital" aria-hidden="true"></canvas>
+              <span class="card__idx" aria-hidden="true">04</span>
+              <span class="card__glow" aria-hidden="true"></span>
+              <span class="card__cta" aria-hidden="true">Case<br>on request <i>↗</i></span>
+            </div>
+            <div class="card__body">
+              <div class="card__top">
+                <h3 class="card__title">Orbital</h3>
+                <span class="card__year">2024</span>
+              </div>
+              <p class="card__desc">
+                Stage visuals that listen to the room. Low frequencies bend the field,
+                hi-hats scatter it into light.
+              </p>
+              <ul class="card__tags">
+                <li>Real-time</li><li>Audio-reactive</li>
+              </ul>
+            </div>
+          </a>
+        </article>
+
+      </div>
+
+      <div class="wrap work__foot" data-reveal>
+        <a class="link-arrow" href="#contact" data-cursor="Talk">
+          <span>Full index available on request</span>
+          <i aria-hidden="true">↗</i>
+        </a>
+      </div>
+    </section>
+
+    <!-- ============ KINETIC BAND ============ -->
+    <section class="band" aria-hidden="true">
+      <div class="band__inner">
+        <div class="band__row">
+          <div class="band__group">
+            <span>Rhythm</span><span class="out">Tension</span><span>Release</span><span class="out">Timing</span>
+          </div>
+          <div class="band__group">
+            <span>Rhythm</span><span class="out">Tension</span><span>Release</span><span class="out">Timing</span>
+          </div>
+        </div>
+        <div class="band__row band__row--rev">
+          <div class="band__group">
+            <span class="out">Weight</span><span>Colour</span><span class="out">Silence</span><span>Repeat</span>
+          </div>
+          <div class="band__group">
+            <span class="out">Weight</span><span>Colour</span><span class="out">Silence</span><span>Repeat</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CRAFT ============ -->
+    <section class="craft" id="craft" aria-labelledby="craftTitle">
+      <div class="wrap">
+        <header class="sec-head sec-head--light" data-reveal>
+          <span class="sec-num">(03)</span>
+          <h2 class="sec-title" id="craftTitle">Craft</h2>
+          <span class="sec-meta">What I actually do</span>
+        </header>
+
+        <p class="craft__intro" data-reveal>
+          One pair of hands from the first sketch to the shipped build.
+          <span lang="zh-CN">从概念到上线，不外包任何一个关键帧。</span>
+        </p>
+
+        <ul class="craft__list">
+          <li class="craft__row" data-craft>
+            <button class="craft__btn" type="button" aria-expanded="false">
+              <span class="craft__i">01</span>
+              <span class="craft__name">Motion systems</span>
+              <span class="craft__arrow" aria-hidden="true">↗</span>
+            </button>
+            <div class="craft__panel">
+              <div class="craft__panel-in">
+                <p>Timing curves, choreography and transition logic documented as a system your
+                  engineers can actually ship — not a folder of one-off animations.</p>
+                <ul class="card__tags card__tags--light"><li>Design tokens</li><li>Prototyping</li><li>Handoff</li></ul>
+              </div>
+            </div>
+          </li>
+          <li class="craft__row" data-craft>
+            <button class="craft__btn" type="button" aria-expanded="false">
+              <span class="craft__i">02</span>
+              <span class="craft__name">WebGL &amp; shaders</span>
+              <span class="craft__arrow" aria-hidden="true">↗</span>
+            </button>
+            <div class="craft__panel">
+              <div class="craft__panel-in">
+                <p>Custom GLSL for identities and experiences that could never exist as a video
+                  file. Real-time, reactive, alive on every machine that opens it.</p>
+                <ul class="card__tags card__tags--light"><li>GLSL</li><li>Three.js</li><li>Performance</li></ul>
+              </div>
+            </div>
+          </li>
+          <li class="craft__row" data-craft>
+            <button class="craft__btn" type="button" aria-expanded="false">
+              <span class="craft__i">03</span>
+              <span class="craft__name">3D &amp; CGI</span>
+              <span class="craft__arrow" aria-hidden="true">↗</span>
+            </button>
+            <div class="craft__panel">
+              <div class="craft__panel-in">
+                <p>Product films, look development and camera language built for the small
+                  screen — where a two-second shot has to sell the whole object.</p>
+                <ul class="card__tags card__tags--light"><li>Look dev</li><li>Camera</li><li>Grading</li></ul>
+              </div>
+            </div>
+          </li>
+          <li class="craft__row" data-craft>
+            <button class="craft__btn" type="button" aria-expanded="false">
+              <span class="craft__i">04</span>
+              <span class="craft__name">Interaction design</span>
+              <span class="craft__arrow" aria-hidden="true">↗</span>
+            </button>
+            <div class="craft__panel">
+              <div class="craft__panel-in">
+                <p>Prototypes at sixty frames a second: cursor, scroll, state and the small
+                  decisions nobody notices but everybody feels.</p>
+                <ul class="card__tags card__tags--light"><li>Prototypes</li><li>Accessibility</li><li>Sound</li></ul>
+              </div>
+            </div>
+          </li>
+          <li class="craft__row" data-craft>
+            <button class="craft__btn" type="button" aria-expanded="false">
+              <span class="craft__i">05</span>
+              <span class="craft__name">Creative direction</span>
+              <span class="craft__arrow" aria-hidden="true">↗</span>
+            </button>
+            <div class="craft__panel">
+              <div class="craft__panel-in">
+                <p>One idea, carried from the first frame to the last line of code — with a
+                  point of view strong enough to survive the meeting.</p>
+                <ul class="card__tags card__tags--light"><li>Concept</li><li>Narrative</li><li>Art direction</li></ul>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ STUDIO ============ -->
+    <section class="studio" id="studio" aria-labelledby="studioTitle">
+      <div class="wrap">
+        <header class="sec-head" data-reveal>
+          <span class="sec-num">(04)</span>
+          <h2 class="sec-title" id="studioTitle">Studio</h2>
+          <span class="sec-meta">Small by design</span>
+        </header>
+
+        <div class="studio__grid">
+          <figure class="quote" data-reveal>
+            <blockquote>
+              <p>“He doesn&rsquo;t animate elements.<br>He <em>composes time</em>.”</p>
+            </blockquote>
+            <figcaption>
+              <span class="quote__avatar" aria-hidden="true">EP</span>
+              <span><b>Elin Park</b><br>Creative Director, Hyperwave</span>
+            </figcaption>
+          </figure>
+
+          <div class="studio__bio" data-reveal style="--d:1">
+            <p>
+              Kinesis is an independent motion practice working between Shanghai and the
+              browser. Eight years, four continents, and one obsession: making digital
+              things feel like they have weight, temperature and intention.
+            </p>
+            <p class="studio__zh" lang="zh-CN">
+              小团队、全流程、零二手转述。你需要的不只是“加个动效”，
+              而是一套能被记住的运动语言。
+            </p>
+            <dl class="facts facts--studio">
+              <div class="fact"><dt>Engagements</dt><dd>Identity systems, product motion, launches</dd></div>
+              <div class="fact"><dt>Availability</dt><dd>1 project / Q1 2026</dd></div>
+            </dl>
+          </div>
+        </div>
+      </div>
+
+      <div class="clients" aria-hidden="true">
+        <div class="clients__row">
+          <div class="clients__group">
+            <span>Hyperwave</span><b>✳</b><span>Atelier 9</span><b>✳</b><span>Nova Lab</span><b>✳</b><span>Forme</span><b>✳</b><span>Mute Index</span><b>✳</b><span>Arcade Collective</span><b>✳</b>
+          </div>
+          <div class="clients__group">
+            <span>Hyperwave</span><b>✳</b><span>Atelier 9</span><b>✳</b><span>Nova Lab</span><b>✳</b><span>Forme</span><b>✳</b><span>Mute Index</span><b>✳</b><span>Arcade Collective</span><b>✳</b>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="contact" id="contact" aria-labelledby="contactTitle">
+      <div class="wrap">
+        <header class="sec-head sec-head--ink" data-reveal>
+          <span class="sec-num">(05)</span>
+          <h2 class="sec-title" id="contactTitle">Contact</h2>
+          <span class="sec-meta">No brief, no problem</span>
+        </header>
+
+        <h3 class="contact__title" data-reveal>
+          <span class="line"><span class="line__i">Let&rsquo;s make</span></span>
+          <span class="line"><span class="line__i">something <em>move</em>.</span></span>
+        </h3>
+
+        <div class="contact__body">
+          <a class="mail" href="mailto:hello@kinesis.studio" data-cursor="Email">
+            <span class="mail__text">hello@kinesis.studio</span>
+            <span class="mail__arrow" aria-hidden="true">↗</span>
+          </a>
+
+          <div class="contact__meta">
+            <p class="contact__avail"><i class="dot" aria-hidden="true"></i>Available for one project — Q1 2026</p>
+            <p>Shanghai <span class="sep">/</span> <span data-clock>--:--:--</span> CST</p>
+            <p>Remote worldwide <span class="sep">/</span> GMT+8</p>
+          </div>
+        </div>
+
+        <footer class="foot">
+          <div class="foot__row">
+            <p>© 2026 Kinesis Studio</p>
+            <p class="foot__note">Designed &amp; built in the browser</p>
+            <nav class="foot__links" aria-label="Elsewhere">
+              <a href="https://github.com/StupidChen114514" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+              <a href="mailto:hello@kinesis.studio">Email ↗</a>
+              <a href="#top" data-cursor="Top">Back to top ↑</a>
+            </nav>
+          </div>
+          <div class="foot__mark" aria-hidden="true">KINESIS</div>
+        </footer>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="js/hero-gl.js" defer></script>
+  <script src="js/art.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
