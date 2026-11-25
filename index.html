@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YUAN® — Motion is the Message / Portfolio 2026</title>
+  <meta name="description" content="YUAN® — independent motion designer & creative developer. Kinetic identities, interactive websites and installations choreographed frame by frame. 让每一帧都有意义。" />
+  <meta name="theme-color" content="#0A0908" />
+  <meta property="og:title" content="YUAN® — Motion is the Message" />
+  <meta property="og:description" content="Independent motion designer & creative developer. Motion systems, kinetic type, WebGL & interactive direction." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230A0908'/%3E%3Ctext x='32' y='46' font-family='Helvetica,sans-serif' font-size='38' font-weight='700' fill='%23D7FF3F' text-anchor='middle'%3EY%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="star8" viewBox="0 0 24 24">
+      <path d="M12 1.5v21M1.5 12h21M4.6 4.6l14.8 14.8M19.4 4.6L4.6 19.4" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
+    </symbol>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__strips"><span></span><span></span><span></span><span></span><span></span></div>
+    <div class="loader__content">
+      <div class="loader__brand">YUAN<span>®</span></div>
+      <div class="loader__center">
+        <div class="loader__count" id="loadCount">000</div>
+      </div>
+      <div class="loader__meta">
+        <span>MOTION PORTFOLIO — 2026</span>
+        <span>LOADING THE FRAMES / 正在装载动态</span>
+      </div>
+      <div class="loader__bar"><i id="loadBar"></i></div>
+    </div>
+  </div>
+
+  <div class="grain" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true"><i id="scrollBar"></i></div>
+
+  <header class="nav" id="nav">
+    <a class="nav__logo" href="#hero" aria-label="YUAN, back to top">YUAN<span>®</span></a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#work">Work</a>
+      <a href="#practice">Practice</a>
+      <a href="#play">Play</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav__meta">
+      <span class="nav__clock" id="navClock">SH 00:00:00</span>
+      <button class="nav__motion" id="motionToggle" type="button" aria-pressed="true">
+        <i></i><span id="motionLabel">MOTION ON</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="hero">
+      <canvas class="hero__canvas" id="gl" aria-hidden="true"></canvas>
+      <div class="hero__fallback" aria-hidden="true"></div>
+
+      <div class="hero__inner">
+        <p class="hero__eyebrow">Independent motion designer &amp; creative developer — 独立动态设计师 / 上海</p>
+
+        <h1 class="hero__title">
+          <span class="mask-line mask-line--outline">
+            <span class="hero__line1"><span class="l">M</span><span class="l">O</span><span class="l">T</span><span class="l">I</span><span class="l">O</span><span class="l">N</span></span>
+          </span>
+          <span class="mask-line mask-line--serif">
+            <span class="hero__line2"><em>matters</em><span class="ast"><svg class="star" aria-hidden="true"><use href="#star8"/></svg></span></span>
+          </span>
+        </h1>
+
+        <div class="hero__bottom">
+          <p class="hero__desc">
+            I choreograph type, light and code into identities that refuse to sit still.
+            <span class="zh">让每一帧，都有意义。</span>
+          </p>
+          <a class="hero__scroll" href="#about" data-cursor="↓">
+            <span>Scroll to move</span>
+            <span class="hero__scroll-line" aria-hidden="true"></span>
+          </a>
+        </div>
+      </div>
+
+      <p class="hero__side" aria-hidden="true">PORTFOLIO — VOL. 06 / 2026</p>
+    </section>
+
+    <!-- ============ TICKER ============ -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker__track" id="tickerTrack">
+        <div class="ticker__half">
+          <span class="ticker__item">Motion <svg class="star"><use href="#star8"/></svg></span>
+          <span class="ticker__item">Kinetic type <svg class="star"><use href="#star8"/></svg></span>
+          <span class="ticker__item">Creative code <svg class="star"><use href="#star8"/></svg></span>
+          <span class="ticker__item">Art direction <svg class="star"><use href="#star8"/></svg></span>
+          <span class="ticker__item">Interaction <svg class="star"><use href="#star8"/></svg></span>
+          <span class="ticker__item">动态设计 <svg class="star"><use href="#star8"/></svg></span>
+        </div>
+        <div class="ticker__half">
+          <span class="ticker__item">Motion <svg class="star"><use href="#star8"/></svg></span>
+          <span class="ticker__item">Kinetic type <svg class="star"><use href="#star8"/></svg></span>
+          <span class="ticker__item">Creative code <svg class="star"><use href="#star8"/></svg></span>
+          <span class="ticker__item">Art direction <svg class="star"><use href="#star8"/></svg></span>
+          <span class="ticker__item">Interaction <svg class="star"><use href="#star8"/></svg></span>
+          <span class="ticker__item">动态设计 <svg class="star"><use href="#star8"/></svg></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ MANIFESTO ============ -->
+    <section class="manifesto" id="about">
+      <h2 class="sr-only">Ethos</h2>
+      <div class="sec-head">
+        <span><i>01</i> — Ethos / 理念</span>
+        <span class="rule"></span>
+        <span class="tag">A practice, not a service</span>
+      </div>
+
+      <div class="manifesto__grid">
+        <aside class="manifesto__aside reveal">
+          <p class="aside__label">SELECTED COLLABS</p>
+          <ul class="aside__list">
+            <li>Studio Nocturne</li>
+            <li>Orbit Lab</li>
+            <li>Monogram</li>
+            <li>Aperture Type</li>
+            <li>Vanta Records</li>
+          </ul>
+          <p class="aside__status"><i></i> Available — Q1 2026</p>
+          <p class="aside__note">Independent, Shanghai-based,<br>working worldwide.</p>
+        </aside>
+
+        <p class="manifesto__text reveal-words">
+          Motion is not <em>decoration</em>. It is the <span class="hl">argument</span> — the part a brand can feel before it is understood. I choreograph type, light and code until an identity grows a pulse, then I tune every frame until it hurts to look away.
+          <span class="zh">让静止的事物动起来，让动态的事物有意义。</span>
+        </p>
+      </div>
+
+      <div class="manifesto__stats">
+        <div class="stat"><span class="stat__num"><b data-count="9">0</b><sup>+</sup></span><span class="stat__label">Years in motion<br>年</span></div>
+        <div class="stat"><span class="stat__num"><b data-count="64">0</b></span><span class="stat__label">Projects shipped<br>项目</span></div>
+        <div class="stat"><span class="stat__num"><b data-count="12">0</b></span><span class="stat__label">Awards &amp; features<br>奖项</span></div>
+        <div class="stat"><span class="stat__num stat__num--inf">∞</span><span class="stat__label">Frames obsessed over<br>帧</span></div>
+      </div>
+
+      <div class="badge" aria-hidden="true">
+        <svg class="badge__ring" viewBox="0 0 200 200">
+          <defs>
+            <path id="badgePath" d="M100,100 m-74,0 a74,74 0 1,1 148,0 a74,74 0 1,1 -148,0" />
+          </defs>
+          <text><textPath href="#badgePath">MOTION IS THE MESSAGE — EVERY FRAME MATTERS — </textPath></text>
+        </svg>
+        <span class="badge__star"><svg class="star"><use href="#star8"/></svg></span>
+      </div>
+    </section>
+
+    <!-- ============ WORK ============ -->
+    <section class="work" id="work">
+      <div class="work__pin">
+        <div class="work__head">
+          <div>
+            <div class="sec-head sec-head--tight">
+              <span><i>02</i> — Selected work / 精选作品</span>
+              <span class="rule"></span>
+            </div>
+            <h2 class="display-title">Selected <em>work</em></h2>
+          </div>
+          <p class="work__hint"><i></i> Scroll to scrub the reel</p>
+        </div>
+
+        <div class="work__track" id="workTrack">
+          <article class="card" data-cursor="LOOK">
+            <div class="card__frame">
+              <canvas class="card__canvas" data-scene="chroma" aria-hidden="true"></canvas>
+              <div class="card__top"><span>01 — Identity in flux</span><span>2025</span></div>
+              <div class="card__bottom">
+                <h3 class="card__title">Chroma</h3>
+                <p class="card__tags">WebGL · Brand · Motion</p>
+              </div>
+              <span class="card__cta" aria-hidden="true">↗</span>
+            </div>
+          </article>
+
+          <article class="card" data-cursor="LOOK">
+            <div class="card__frame">
+              <canvas class="card__canvas" data-scene="tunnel" aria-hidden="true"></canvas>
+              <div class="card__top"><span>02 — Kinetic specimen</span><span>2025</span></div>
+              <div class="card__bottom">
+                <h3 class="card__title">Type/02</h3>
+                <p class="card__tags">Type · Motion · System</p>
+              </div>
+              <span class="card__cta" aria-hidden="true">↗</span>
+            </div>
+          </article>
+
+          <article class="card" data-cursor="LOOK">
+            <div class="card__frame">
+              <canvas class="card__canvas" data-scene="moire" aria-hidden="true"></canvas>
+              <div class="card__top"><span>03 — After-hours visuals</span><span>2024</span></div>
+              <div class="card__bottom">
+                <h3 class="card__title">Nocturne</h3>
+                <p class="card__tags">Installation · Sound · Generative</p>
+              </div>
+              <span class="card__cta" aria-hidden="true">↗</span>
+            </div>
+          </article>
+
+          <article class="card" data-cursor="LOOK">
+            <div class="card__frame">
+              <canvas class="card__canvas" data-scene="orbit" aria-hidden="true"></canvas>
+              <div class="card__top"><span>04 — An exhibit you can feel</span><span>2024</span></div>
+              <div class="card__bottom">
+                <h3 class="card__title">Gravity</h3>
+                <p class="card__tags">Spatial · Web · Interaction</p>
+              </div>
+              <span class="card__cta" aria-hidden="true">↗</span>
+            </div>
+          </article>
+
+          <article class="card" data-cursor="LOOK">
+            <div class="card__frame">
+              <canvas class="card__canvas" data-scene="grid" aria-hidden="true"></canvas>
+              <div class="card__top"><span>05 — A site that breathes</span><span>2023</span></div>
+              <div class="card__bottom">
+                <h3 class="card__title">Flowstate</h3>
+                <p class="card__tags">Web · Interaction · Direction</p>
+              </div>
+              <span class="card__cta" aria-hidden="true">↗</span>
+            </div>
+          </article>
+        </div>
+
+        <div class="work__foot">
+          <span class="work__count" id="workCount">01 / 05</span>
+          <div class="work__bar"><i id="workBar"></i></div>
+          <span class="work__hint work__hint--end" aria-hidden="true">Keep scrolling</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRACTICE ============ -->
+    <section class="practice" id="practice">
+      <div class="sec-head">
+        <span><i>03</i> — Practice / 专长</span>
+        <span class="rule"></span>
+        <span class="tag">Full-stack motion</span>
+      </div>
+      <h2 class="display-title">What I <em>do</em></h2>
+
+      <ul class="caps">
+        <li class="cap">
+          <span class="cap__num">01</span>
+          <h3 class="cap__title">Motion systems</h3>
+          <p class="cap__desc">Choreography for brands, products &amp; film</p>
+          <span class="cap__arrow" aria-hidden="true">↗</span>
+        </li>
+        <li class="cap">
+          <span class="cap__num">02</span>
+          <h3 class="cap__title">Kinetic typography</h3>
+          <p class="cap__desc">Type that behaves like sound</p>
+          <span class="cap__arrow" aria-hidden="true">↗</span>
+        </li>
+        <li class="cap">
+          <span class="cap__num">03</span>
+          <h3 class="cap__title">Creative development</h3>
+          <p class="cap__desc">WebGL · Canvas · Shaders · GSAP</p>
+          <span class="cap__arrow" aria-hidden="true">↗</span>
+        </li>
+        <li class="cap">
+          <span class="cap__num">04</span>
+          <h3 class="cap__title">Art direction</h3>
+          <p class="cap__desc">Concept, palette, rhythm, rule-breaking</p>
+          <span class="cap__arrow" aria-hidden="true">↗</span>
+        </li>
+        <li class="cap">
+          <span class="cap__num">05</span>
+          <h3 class="cap__title">Interaction &amp; sound</h3>
+          <p class="cap__desc">Prototypes that respond to humans</p>
+          <span class="cap__arrow" aria-hidden="true">↗</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ============ PLAYGROUND ============ -->
+    <section class="play" id="play">
+      <div class="sec-head">
+        <span><i>04</i> — Playground / 试验场</span>
+        <span class="rule"></span>
+        <span class="tag">No rules in here</span>
+      </div>
+      <h2 class="play__title">Stir <em>the</em> ink</h2>
+
+      <div class="play__stage" id="playStage">
+        <canvas id="playCanvas" data-cursor="STIR" aria-label="Interactive ink playground — move your cursor to stir, click to burst"></canvas>
+        <div class="play__hint"><span class="pulse" aria-hidden="true"></span> Move your cursor — 搅动墨色</div>
+        <div class="play__ui">
+          <button type="button" id="burstBtn">Burst</button>
+          <button type="button" id="clearBtn">Clear</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="contact" id="contact">
+      <div class="sec-head">
+        <span><i>05</i> — Contact / 联系</span>
+        <span class="rule"></span>
+        <span class="tag">Booking Q1 2026</span>
+      </div>
+
+      <h2 class="contact__title mask-lines">
+        <span class="mask-line"><span>Let&rsquo;s make</span></span>
+        <span class="mask-line"><span>it <em>move.</em></span></span>
+      </h2>
+
+      <div class="contact__row">
+        <a class="contact__mail" href="mailto:hello@yuan.studio" data-cursor="WRITE" data-magnetic>
+          hello@yuan.studio<span aria-hidden="true">↗</span>
+        </a>
+        <p class="contact__note">
+          Have a launch, a rebrand, or an unreasonable idea?<br>
+          I reply within 48 hours. — 有想法，就聊聊。
+        </p>
+      </div>
+
+      <ul class="socials">
+        <li><a href="https://www.instagram.com/" target="_blank" rel="noopener" data-cursor="↗">Instagram <span aria-hidden="true">↗</span></a></li>
+        <li><a href="https://vimeo.com/" target="_blank" rel="noopener" data-cursor="↗">Vimeo <span aria-hidden="true">↗</span></a></li>
+        <li><a href="https://www.are.na/" target="_blank" rel="noopener" data-cursor="↗">Are.na <span aria-hidden="true">↗</span></a></li>
+        <li><a href="https://github.com/" target="_blank" rel="noopener" data-cursor="↗">GitHub <span aria-hidden="true">↗</span></a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© 2026 YUAN® — All frames reserved</span>
+    <span class="footer__mid">Designed &amp; built in the browser</span>
+    <span class="footer__clock" id="footClock">SH 00:00:00</span>
+    <a href="#hero" class="footer__top" data-cursor="↑">Back to top ↑</a>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
